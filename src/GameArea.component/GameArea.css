@@ -1,3 +1,35 @@
 .game {
   background-color: blue;
 }
+
+.playarea {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.easy {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+   "a b c";
+}
+
+.medium {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+   "a b c"
+   "d e f";
+}
+
+.hard {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+   "a b c"
+   "d e f"
+   "g h i";
+}
+

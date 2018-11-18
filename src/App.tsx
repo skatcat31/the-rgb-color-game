@@ -10,7 +10,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <GameArea />
+        <GameArea
+          difficulty={'hard'}
+          winner={console.log}
+          loser={console.log}
+          color="blue"
+        />
         <Header />
         <Footer />
       </div>
