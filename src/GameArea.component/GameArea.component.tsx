@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './GameArea.css';
+import { RANDOM_INT_UP_TO } from '../lib';
 
 interface gameProps {
   difficulty :string,
@@ -16,10 +17,6 @@ const DIFFICULTY_LEVEL :{ [ difficulty :string ] :number} = {
 
 function INDEX_GRIDAREA (number :number) :string {
   return String.fromCharCode(97 + number);
-}
-
-function RANDOM_INT_UP_TO (max: number) :number {
-  return Math.floor(Math.random() * max)
 }
 
 function GameArea ({ difficulty, color, winner, loser } :gameProps) :JSX.Element {
