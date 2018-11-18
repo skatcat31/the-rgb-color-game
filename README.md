@@ -58,8 +58,9 @@ A difficulty of the game. It presents 3 options for the color to be found, of a 
  - Allow the player to select a difficulty and start a new game. Proceed to `Story` `2`
 
 ## User Experience Stories
- - As a Player, I want to win the round
- - As a a Player, I want to get a high score
- - As a Player, I want to start a new game if I lose
- - As a Player, I want to see many different colors
- - As a Player, I want to be challenged when I'm ready for it
+ - As a Player, I want to win the round so that I can get a better score
+ - As a a Player, I want to get a high score so that I can set the local high scores
+ - As a Player, I want to start a new game if I lose so that I can play again
+ - As a Player, I want to see many different colors so that I can learn what they look like while playing
+ - As a Player, I want to be challenged when I'm ready for it by changing the difficulty
+ - As a Player, I want each round to be more challenging than the last few by the wrong choices getting closer to the real choice as I play more sets of rounds(5 rounds a set)
