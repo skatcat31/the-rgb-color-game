@@ -1,0 +1,31 @@
+.App {
+  display: grid;
+  grid-template-columns: 500px; /* game */
+  grid-template-rows: 10% 500px 10%; /* header, body, footer */
+  grid-template-areas:
+    "header"
+    "game"
+    "footer";
+  text-align: center;
+  justify-content: center;
+  align-content: start;
+}
+
+@media (max-width: 499px) {
+  .App {
+    grid-template-columns: 300px; /* game */
+    grid-template-rows: 10% 300px 10%; /* header, body, footer */
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.game {
+  grid-area: game;
+}
