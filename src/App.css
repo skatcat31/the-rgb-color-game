@@ -13,7 +13,7 @@
 
 @media (max-width: 499px) {
   .App {
-    grid-template-columns: 300px; /* game */
+    grid-template-columns: 100%; /* game */
     grid-template-rows: 10% 300px 10%; /* header, body, footer */
   }
 }
