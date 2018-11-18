@@ -43,7 +43,7 @@ function GameArea ({ difficulty, color, winner, loser } :gameProps) :JSX.Element
           }
 
           // NOT winning ticket, should instead generate a hue shift of the color
-          return <div key={index} className="choice" style ={{ gridArea: INDEX_GRIDAREA(index)}} onClick={loser} />
+          return <div key={index} className="choice" style ={{ backgroundColor: 'red', gridArea: INDEX_GRIDAREA(index)}} onClick={loser} />
         })
       }
     </div>

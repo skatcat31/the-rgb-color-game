@@ -29,3 +29,7 @@
    "g h i";
 }
 
+.playarea .choice {
+  border-radius: 10px;
+  margin: 2px;
+}
