@@ -2,7 +2,7 @@
 
 ## Sections
 
-(`UX`)[#ux]
+[`UX`](#ux)
 
 I had never heard of The RGB Color Game until I played it. I decided to, without looking at any source, recreate it from scratch in ReactJS
 
@@ -41,7 +41,7 @@ A difficulty of the game. It presents 3 options for the color to be found, of a 
 
 ## Experience
 1. A Player has come to your site to play `The RGB Color Game`. They are greeted by:  
- - the initial screen, which contains all controls needed to start the game at any of the difficulties((`easy`)[#easy], (`medium`)[#medium], (`hard`)[#hard], (`impossible`)[#impossible])  
+ - the initial screen, which contains all controls needed to start the game at any of the difficulties([`easy`](#easy), [`medium`](#medium), [`hard`](#hard), [`impossible`](#impossible))  
  - the last ten Local High Scores are displayed, sorted by round passed  
  - Instructions on how to play the game  
 1.a. `Player` selects a difficulty, causing a population of the `GState` as defined by the difficulty. Proceed to `Story` `2`  
