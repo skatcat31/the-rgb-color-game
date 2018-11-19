@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './Header.css';
 
-function Header (props :any) :JSX.Element {
+interface colorProp {
+  color: string
+};
+
+function Header ({ color } :colorProp) :JSX.Element {
   return (
     <div className="header">
-      <span>{props.color}</span>
+      <span>{color}</span>
     </div>
   );
 }
