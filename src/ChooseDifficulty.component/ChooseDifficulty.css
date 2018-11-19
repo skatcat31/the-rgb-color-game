@@ -1,5 +1,8 @@
 .choose h2 {
   border-radius: 10px;
   margin: 2px;
+}
+
+.choose .big {
   line-height: 3;
 }

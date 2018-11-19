@@ -4,29 +4,34 @@ import './ChooseDifficulty.css';
 interface chooseProps {
   score :number,
   oldDifficulty :string,
-  selectDifficulty :(difficulty: string) => void
+  selectDifficulty :(difficulty: string) => void,
+  color :string
 }
 
-function ChooseDifficulty ({ score, oldDifficulty, selectDifficulty } :chooseProps) : JSX.Element {
+function ChooseDifficulty ({ color, score, oldDifficulty, selectDifficulty } :chooseProps) : JSX.Element {
   return (
     <div className="choose game">
       <h1>Select a difficulty</h1>
-      <h2 style={{ background: 'green'}} onClick={() => selectDifficulty('easy')}>
+      <h2 className="big" style={{ background: 'green'}} onClick={() => selectDifficulty('easy')}>
         EASY
       </h2>
-      <h2 style={{ background: 'orange'}} onClick={() => selectDifficulty('medium')}>
+      <h2 className="big" style={{ background: 'orange'}} onClick={() => selectDifficulty('medium')}>
         MEDIUM
       </h2>
-      <h2 style={{ background: 'red'}} onClick={() => selectDifficulty('hard')}>
+      <h2 className="big" style={{ background: 'red'}} onClick={() => selectDifficulty('hard')}>
         HARD
       </h2>
       {
         oldDifficulty === 'none'
-        ? null
+        ? <h2>
+          <br/>
+          <span>{`${color}`}</span>
+        </h2>
         : <h2>
-          <span>{`Difficulty: ${oldDifficulty}`}</span>
+          <br/>
+          <span>{color}</span>
           <br />
-          <span>{`Score: ${score}`}</span>
+          <span>{`${score} ${oldDifficulty.toUpperCase()}`}</span>
         </h2>
       }
     </div>

@@ -60,7 +60,7 @@ class App extends Component<object, gameState> {
       ! difficulty
       ? <div className="App">
         { HEAD }
-        <ChooseDifficulty score={score} oldDifficulty={oldDifficulty} selectDifficulty={this.selectDifficulty} />
+        <ChooseDifficulty color={color} score={score} oldDifficulty={oldDifficulty} selectDifficulty={this.selectDifficulty} />
       </div>
       : <div className="App">
         <GameArea
