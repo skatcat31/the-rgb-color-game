@@ -28,13 +28,13 @@ The `RState` is React State and denotes it is the current React State of the app
 The `Machine` is the local device being interacted with.
 
 ### Easy
-A difficulty of the game. It presents 3 options for the color to be found, of a distinct distance decided by hue shift of 1/3 spectrum from the winning color.
+A difficulty of the game. It presents 3 options for the color to be found
 
 ### Medium
-A difficulty of the game. It presents 6 options for the color to be found, of a distinct distance decided by hue shift of 1/4 spectrum or more up to 1/3 from the winning color.
+A difficulty of the game. It presents 6 options for the color to be found
 
 ### Hard
-A difficulty of the game. It presents 9 options for the color to be found, of a distinct distance decided by hue shift of 1/8 spectrum or more up to 1/3 from the winning color.
+A difficulty of the game. It presents 9 options for the color to be found
 
 ### Impossible
 A difficulty of the game. It presents 3 options for the color to be found, of a fixed distance of 3 hues from the winning color(the minimally visible difference in shift)
