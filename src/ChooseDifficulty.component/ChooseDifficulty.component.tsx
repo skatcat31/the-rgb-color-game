@@ -1,5 +1,5 @@
 import React from 'react';
-// import './ChooseDifficulty.css';
+import './ChooseDifficulty.css';
 
 interface chooseProps {
   score :number,
@@ -10,15 +10,6 @@ interface chooseProps {
 function ChooseDifficulty ({ score, oldDifficulty, selectDifficulty } :chooseProps) : JSX.Element {
   return (
     <div className="choose game">
-      {
-        oldDifficulty === 'none'
-        ? null
-        : <h2>
-          <span>{`Difficulty: ${oldDifficulty}`}</span>
-          <br />
-          <span>{`Score: ${score}`}</span>
-        </h2>
-      }
       <h1>Select a difficulty</h1>
       <h2 style={{ background: 'green'}} onClick={() => selectDifficulty('easy')}>
         EASY
@@ -29,6 +20,15 @@ function ChooseDifficulty ({ score, oldDifficulty, selectDifficulty } :choosePro
       <h2 style={{ background: 'red'}} onClick={() => selectDifficulty('hard')}>
         HARD
       </h2>
+      {
+        oldDifficulty === 'none'
+        ? null
+        : <h2>
+          <span>{`Difficulty: ${oldDifficulty}`}</span>
+          <br />
+          <span>{`Score: ${score}`}</span>
+        </h2>
+      }
     </div>
   );
 }
