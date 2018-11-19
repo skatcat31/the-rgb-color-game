@@ -5,6 +5,7 @@ import './App.css';
 import GameArea from './GameArea.component';
 import Header from './Header.component';
 import Footer from './Footer.component';
+import ChooseDifficulty from './ChooseDifficulty.component';
 
 // import helpers
 import { RANDOM_RGB_STRING } from './lib';
@@ -12,7 +13,8 @@ import { RANDOM_RGB_STRING } from './lib';
 // Private interfaces
 interface gameState {
   score :number,
-  difficulty :string
+  difficulty :string,
+  oldDifficulty :string
 };
 
 class App extends Component<object, gameState> {
@@ -23,28 +25,42 @@ class App extends Component<object, gameState> {
     // default state
     this.state = {
       score: 0,
-      difficulty: 'easy'
+      difficulty: '',
+      oldDifficulty: 'none'
     };
 
     this.winner = this.winner.bind(this);
     this.loser = this.loser.bind(this);
+    this.selectDifficulty = this.selectDifficulty.bind(this);
   }
 
   winner () :void {
-    this.setState((state :gameState) :object => ({score: state.score + 1}));
+    this.setState(({ score } :gameState) :object => ({score: score + 1}));
   }
 
   loser () :void {
-    this.setState({ score: 0 });
+    this.setState(({ difficulty } :gameState) :object => ({ oldDifficulty: difficulty, difficulty: '' }));
+  }
+
+  selectDifficulty (difficulty :string) :void {
+    this.setState({ difficulty, oldDifficulty: '', score: 0 });
   }
 
   render() {
 
     // Generate the winning color
     const color = RANDOM_RGB_STRING();
-    const { state: { score, difficulty }, winner, loser }= this;
+
+    // Retrieve variables from this
+    const { state: { score, difficulty, oldDifficulty }, winner, loser }= this;
+
     return (
-      <div className="App">
+      ! difficulty
+      ? <div className="App">
+        <Header color={color}/>
+        <ChooseDifficulty score={score} oldDifficulty={oldDifficulty} selectDifficulty={this.selectDifficulty}/>
+      </div>
+      : <div className="App">
         <GameArea
           difficulty={difficulty}
           winner={winner}
