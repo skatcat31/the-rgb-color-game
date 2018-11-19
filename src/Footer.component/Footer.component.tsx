@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import './Footer.css';
 
-class Footer extends Component {
-  render() {
-    return (
-      <div className="footer">
-        <span>Hello From Footer</span>
-      </div>
-    );
-  }
+interface footerProps {
+  score: number,
+  difficulty: string
+}
+
+function Footer ({ score, difficulty } :footerProps) : JSX.Element {
+  return (
+    <div className="footer">
+      <span>{`Score: ${score}`}</span>
+      <br />
+      <span>{`Difficulty: ${difficulty}`}</span>
+    </div>
+  );
 }
 
 export default Footer;

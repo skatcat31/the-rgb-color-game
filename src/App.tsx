@@ -23,24 +23,36 @@ class App extends Component<object, gameState> {
     // default state
     this.state = {
       score: 0,
-      difficulty: ''
+      difficulty: 'easy'
     };
+
+    this.winner = this.winner.bind(this);
+    this.loser = this.loser.bind(this);
+  }
+
+  winner () :void {
+    this.setState((state :gameState) :object => ({score: state.score + 1}));
+  }
+
+  loser () :void {
+    this.setState({ score: 0 });
   }
 
   render() {
 
     // Generate the winning color
     const color = RANDOM_RGB_STRING();
+    const { state: { score, difficulty }, winner, loser }= this;
     return (
       <div className="App">
         <GameArea
-          difficulty={'easy'}
-          winner={() => alert('You Win!')}
-          loser={() => alert('You lose!')}
+          difficulty={difficulty}
+          winner={winner}
+          loser={loser}
           color={color}
         />
         <Header color={color}/>
-        <Footer />
+        <Footer score={score} difficulty={difficulty}/>
       </div>
     );
   }
