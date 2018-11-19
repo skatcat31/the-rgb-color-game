@@ -53,11 +53,14 @@ class App extends Component<object, gameState> {
     // Retrieve variables from this
     const { state: { score, difficulty, oldDifficulty, color }, winner, loser }= this;
 
+    // Because the header is a single instance and consistent toward conditions, we should declare it once, use either
+    const HEAD = <Header color={color} difficulty={ difficulty }/>;
+
     return (
       ! difficulty
       ? <div className="App">
-        <Header color={color}/>
-        <ChooseDifficulty score={score} oldDifficulty={oldDifficulty} selectDifficulty={this.selectDifficulty}/>
+        { HEAD }
+        <ChooseDifficulty score={score} oldDifficulty={oldDifficulty} selectDifficulty={this.selectDifficulty} />
       </div>
       : <div className="App">
         <GameArea
@@ -66,7 +69,7 @@ class App extends Component<object, gameState> {
           loser={loser}
           color={color}
         />
-        <Header color={color}/>
+        { HEAD }
         <Footer score={score} difficulty={difficulty}/>
       </div>
     );

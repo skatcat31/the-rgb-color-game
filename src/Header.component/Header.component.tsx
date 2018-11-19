@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import './Header.css';
 
 interface colorProp {
-  color: string
+  color: string,
+  difficulty: string
 };
 
-function Header ({ color } :colorProp) :JSX.Element {
+function Header ({ color, difficulty } :colorProp) :JSX.Element {
   return (
     <div className="header">
-      <span>{color}</span>
+      {
+        !difficulty
+        ? <h3 style={{ background: color }}>{color}</h3>
+        : <h3>{color}</h3>
+      }
     </div>
   );
 }
