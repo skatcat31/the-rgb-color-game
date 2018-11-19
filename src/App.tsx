@@ -14,7 +14,8 @@ import { RANDOM_RGB_STRING } from './lib';
 interface gameState {
   score :number,
   difficulty :string,
-  oldDifficulty :string
+  oldDifficulty :string,
+  color :string
 };
 
 class App extends Component<object, gameState> {
@@ -26,7 +27,8 @@ class App extends Component<object, gameState> {
     this.state = {
       score: 0,
       difficulty: '',
-      oldDifficulty: 'none'
+      oldDifficulty: 'none',
+      color: RANDOM_RGB_STRING()
     };
 
     this.winner = this.winner.bind(this);
@@ -35,7 +37,7 @@ class App extends Component<object, gameState> {
   }
 
   winner () :void {
-    this.setState(({ score } :gameState) :object => ({score: score + 1}));
+    this.setState(({ score } :gameState) :object => ({score: score + 1, color: RANDOM_RGB_STRING() }));
   }
 
   loser () :void {
@@ -43,16 +45,13 @@ class App extends Component<object, gameState> {
   }
 
   selectDifficulty (difficulty :string) :void {
-    this.setState({ difficulty, oldDifficulty: '', score: 0 });
+    this.setState({ difficulty, oldDifficulty: '', score: 0, color: RANDOM_RGB_STRING() });
   }
 
   render() {
 
-    // Generate the winning color
-    const color = RANDOM_RGB_STRING();
-
     // Retrieve variables from this
-    const { state: { score, difficulty, oldDifficulty }, winner, loser }= this;
+    const { state: { score, difficulty, oldDifficulty, color }, winner, loser }= this;
 
     return (
       ! difficulty
