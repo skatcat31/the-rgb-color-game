@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './Header.css';
 
-class Header extends Component {
-  render() {
-    return (
-      <div className="header">
-        <span>Hello From Header</span>
-      </div>
-    );
-  }
+function Header (props :any) :JSX.Element {
+  return (
+    <div className="header">
+      <span>{props.color}</span>
+    </div>
+  );
 }
 
 export default Header;

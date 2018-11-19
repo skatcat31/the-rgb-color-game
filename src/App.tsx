@@ -7,13 +7,30 @@ import Header from './Header.component';
 import Footer from './Footer.component';
 
 // import helpers
-import { RANDOM_INT_UP_TO } from './lib';
+import { RANDOM_RGB_STRING } from './lib';
 
-class App extends Component {
+// Private interfaces
+interface gameState {
+  score :number,
+  difficulty :string
+};
+
+class App extends Component<object, gameState> {
+
+  constructor (props :object) {
+    super(props);
+
+    // default state
+    this.state = {
+      score: 0,
+      difficulty: ''
+    };
+  }
+
   render() {
 
     // Generate the winning color
-    const color = `rgb(${RANDOM_INT_UP_TO(255)},${RANDOM_INT_UP_TO(255)},${RANDOM_INT_UP_TO(255)})`
+    const color = RANDOM_RGB_STRING();
     return (
       <div className="App">
         <GameArea
@@ -22,7 +39,7 @@ class App extends Component {
           loser={() => alert('You lose!')}
           color={color}
         />
-        <Header />
+        <Header color={color}/>
         <Footer />
       </div>
     );
